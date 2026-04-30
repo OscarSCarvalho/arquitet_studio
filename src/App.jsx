@@ -4,6 +4,7 @@ import WelcomeScreen from './components/WelcomeScreen'
 import Onboarding from './components/Onboarding'
 import Discovery from './components/Discovery'
 import Result from './components/Result'
+import RoomViewer from './components/RoomViewer'
 
 const questions = [
   {

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import RoomViewer from './RoomViewer'
 
 const Result = ({ profile, profileData, references, onReset, onBack }) => (
   <motion.section
@@ -16,6 +17,9 @@ const Result = ({ profile, profileData, references, onReset, onBack }) => (
       <h2 id="result-title" className="mt-3 font-serif text-3xl text-slate-800 md:text-5xl">
         Perfil identificado: {profile}
       </h2>
+      <p className="mt-2 text-lg font-medium text-slate-700 text-center">
+        Temos uma prévia do seu ambiente decorado. Vamos ver ?
+      </p>
       <p className="mt-4 max-w-3xl text-slate-600">{profileData.signature}</p>
     </header>
 
@@ -147,6 +151,7 @@ const Result = ({ profile, profileData, references, onReset, onBack }) => (
     <div id="reset-description" className="sr-only">
       Clique para refazer o questionário e obter um novo perfil
     </div>
+    <RoomViewer profile={profile} colors={profileData?.colors || []} />
   </motion.section>
 )
 
