@@ -76,11 +76,7 @@ const WelcomeScreen = ({ onStart }) => {
           <motion.div variants={itemVariants} className="space-y-6">
             {/* Primeira linha com maior destaque */}
             <h1 className="font-serif text-5xl md:text-7xl font-light tracking-wide text-slate-900 leading-tight">
-              <span className="text-slate-800 font-normal">Arquitetura</span>
-              <br />
-              <span className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-800 bg-clip-text text-transparent">
-                que entende você.
-              </span>
+              Arquitetura que entende você.
             </h1>
 
             {/* Linha secundária */}

@@ -102,7 +102,7 @@ const Onboarding = ({ onContinue, onBack }) => {
         {/* Header */}
         <motion.div variants={itemVariants} className="text-center mb-16 md:mb-24">
           <h1 className="font-serif text-4xl md:text-5xl font-light text-slate-900 mb-4 tracking-wide">
-            Como funciona a <span className="font-normal text-slate-800">jornada</span>
+            Como funciona a jornada
           </h1>
           <p className="text-slate-600 text-base md:text-lg font-light max-w-2xl mx-auto">
             Três etapas simples para descobrir o espaço que reflete verdadeiramente quem você é.

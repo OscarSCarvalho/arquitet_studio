@@ -108,7 +108,7 @@ describe('Discovery', () => {
       />
     )
 
-    const button = screen.getByRole('button', { name: /Extrovertido/i })
+    const button = screen.getByRole('radio', { name: /Extrovertido/i })
     fireEvent.click(button)
 
     expect(mockOnSelect).toHaveBeenCalledWith('Extrovertido')

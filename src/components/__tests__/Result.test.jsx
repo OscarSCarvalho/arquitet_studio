@@ -45,7 +45,7 @@ describe('Result', () => {
       />
     )
 
-    expect(screen.getByText(/Clássico Minimalista/i)).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 2, name: /Clássico Minimalista/i })).toBeInTheDocument()
   })
 
   it('displays the profile signature', () => {

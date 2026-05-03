@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import WelcomeScreen from './components/WelcomeScreen'
 import Onboarding from './components/Onboarding'
+import WelcomeForm from './components/WelcomeForm'
 import Discovery from './components/Discovery'
 import Result from './components/Result'
 import RoomViewer from './components/RoomViewer'
@@ -112,6 +113,7 @@ function App() {
   const [stage, setStage] = useState('welcome')
   const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState({})
+  const [userInfo, setUserInfo] = useState(null)
 
   const completed = Object.keys(answers).length
   const progress = Math.round((completed / questions.length) * 100)
@@ -164,6 +166,11 @@ function App() {
   }
 
   const handleOnboardingContinue = () => {
+    setStage('welcomeForm')
+  }
+
+  const handleWelcomeFormConfirm = (data) => {
+    setUserInfo(data)
     setStage('discovery')
   }
 
@@ -178,7 +185,11 @@ function App() {
           <Onboarding key="onboarding" onContinue={handleOnboardingContinue} onBack={handleOnboardingBack} />
         )}
 
-        {stage !== 'welcome' && stage !== 'onboarding' && (
+        {stage === 'welcomeForm' && (
+          <WelcomeForm key="welcomeForm" onConfirm={handleWelcomeFormConfirm} onBack={handleOnboardingBack} />
+        )}
+
+        {stage !== 'welcome' && stage !== 'onboarding' && stage !== 'welcomeForm' && (
           <main className="mx-auto min-h-screen max-w-6xl px-4 py-6 md:px-10 md:py-10" role="main">
             <div className="relative overflow-hidden rounded-[32px] border border-slate-200/70 bg-white/85 p-6 shadow-[0_30px_60px_-35px_rgba(80,102,130,0.45)] backdrop-blur md:p-12">
               <div className="pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-sky-100/60 blur-3xl" />
@@ -204,6 +215,7 @@ function App() {
                     profile={profile}
                     profileData={profileData}
                     references={references}
+                    answers={answers}
                     onReset={resetFlow}
                     onBack={() => setStage('welcome')}
                   />

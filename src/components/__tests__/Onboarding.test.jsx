@@ -16,7 +16,7 @@ describe('Onboarding', () => {
     render(<Onboarding onContinue={mockOnContinue} onBack={mockOnBack} />)
 
     expect(screen.getByText(/Descoberta/i)).toBeInTheDocument()
-    expect(screen.getByText(/Análise/i)).toBeInTheDocument()
+    expect(screen.getByText('Análise')).toBeInTheDocument()
     expect(screen.getByText(/Personalização/i)).toBeInTheDocument()
   })
 

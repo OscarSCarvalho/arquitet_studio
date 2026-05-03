@@ -3,7 +3,11 @@ module.exports = {
   roots: ['<rootDir>/src'],
   testMatch: ['**/__tests__/**/*.{js,jsx}', '**/?(*.)+(spec|test).{js,jsx}'],
   moduleNameMapper: {
-    '^framer-motion$': '<rootDir>/src/components/__tests__/__mocks__/framer-motion.js',
+    '^./RoomViewer$': '<rootDir>/src/mocks/RoomViewer.js',
+    '^./Profile3DViewer$': '<rootDir>/src/mocks/Profile3DViewer.js',
+    '^framer-motion$': '<rootDir>/src/mocks/framer-motion.js',
+    '^@react-three/fiber$': '<rootDir>/src/mocks/@react-three/fiber.js',
+    '^@react-three/drei$': '<rootDir>/src/mocks/@react-three/drei.js',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
   transform: {
