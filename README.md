@@ -27,7 +27,7 @@ Uma experiência digital imersiva para descobrir seu perfil arquitetônico atrav
    npm run dev
    ```
 
-3. Abra [http://localhost:5173](http://localhost:5180/) no navegador.
+3. Abra [http://localhost:5180]no navegador.
 
 ## Scripts Disponíveis
 
